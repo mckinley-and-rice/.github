@@ -11,7 +11,7 @@ English: [README.md](./README.md)
 | 문서 | 정하는 것 |
 |---|---|
 | [CONTRIBUTING.ko.md](./CONTRIBUTING.ko.md) | 기본 기여 규약. 저장소가 자기 것으로 덮어쓸 수 있습니다. |
-| [CODE_OF_CONDUCT.ko.md](./CODE_OF_CONDUCT.ko.md) | 서로를 대하는 방식. |
+| [CODE_OF_CONDUCT.ko.md](./docs/CODE_OF_CONDUCT.ko.md) | 서로를 대하는 방식. |
 | [SECURITY.md](./SECURITY.md) | 취약점 신고를 보내는 곳. 공개 이슈는 절대 아닙니다. |
 | [SUPPORT.md](./SUPPORT.md) | 질문을 보내는 곳. |
 | [AGENTS.md](./AGENTS.md) | 우리 저장소에서 작업하는 AI 에이전트가 지켜야 할 것. |
@@ -47,6 +47,13 @@ English: [README.md](./README.md)
 
 **상속은 조직 경계에서 멈춥니다.** 이 기본값은 이 조직의 저장소에만 닿습니다. 다른 조직의
 저장소는 같은 사람이 둘 다 소유하더라도 그 조직 자신의 `.github` 저장소가 필요합니다.
+
+**한국어 행동 규범은 영어판 옆이 아니라 `docs/` 에 있습니다.** GitHub는 health file 슬롯마다
+파일 하나를 고르는데, 루트에 `CODE_OF_CONDUCT.md` 와 `CODE_OF_CONDUCT.ko.md` 가 함께 있으면
+242개 저장소 전부에 대해 한국어판을 골랐습니다. `docs/` 는 루트보다 낮은 우선순위로 스캔되므로
+영어 파일이 슬롯을 차지하고 한국어 파일은 여전히 한 번의 클릭 거리에 있습니다. 되돌려 놓지
+마십시오. 다른 모든 한국어 문서는 영어 짝 옆에서 `.ko.md` 이름을 유지합니다. GitHub 슬롯이
+가져가는 문서가 그것 말고는 없기 때문입니다.
 
 ## 표준을 바꿀 때
 

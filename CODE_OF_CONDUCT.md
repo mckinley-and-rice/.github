@@ -1,6 +1,6 @@
 # Code of Conduct
 
-한국어: [CODE_OF_CONDUCT.ko.md](./CODE_OF_CONDUCT.ko.md)
+한국어: [CODE_OF_CONDUCT.ko.md](./docs/CODE_OF_CONDUCT.ko.md)
 
 ## The short version
 

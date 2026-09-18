@@ -1,6 +1,6 @@
 # 행동 규범
 
-English: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+English: [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md)
 
 ## 짧은 판
 
