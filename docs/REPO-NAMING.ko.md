@@ -77,6 +77,77 @@ seers-api
 저장소가 "Redrob Data" 라고 적힌 문자열을 출하하면, 어느 방향으로든 검색이 실패합니다. 공개한
 다음이 아니라 공개하기 전에 개명하십시오.
 
+## 설명과 토픽
+
+이름만으로는 241개 목록에서 저장소를 찾을 수 없습니다. 하나를 찾을 수 있게 만드는 것은 설명과
+토픽이고, 둘 다 필수입니다.
+
+**모든 저장소에 설명이 있습니다.** 한 문장, 현재형으로, 그것이 무엇이고 누구를 위한 것인지 말합니다.
+제품 이름으로 시작하십시오. GitHub가 저장소 이름 없이 설명만 보여줄 때도 문장이 성립해야 합니다.
+
+```
+Redrob Query is a JVM-free, AI-native desktop database client for PostgreSQL, MySQL, SQLite, and MongoDB.
+```
+
+120자 아래로 유지하십시오. GitHub는 훨씬 더 긴 것도 받지만, 긴 설명은 조직 목록과 검색 결과에서
+잘리고, 그곳이 바로 설명이 도와야 할 자리입니다. 저장소 이름을 그 저장소의 설명으로 쓰지 말고,
+자리표시자를 남기지 마십시오. 빈 설명과 `TODO` 는 같은 비용이고, 둘 중 하나는 의도적으로 보입니다.
+
+**모든 저장소에 토픽이 최소 세 개 있습니다.** 다음 축에서 네 개에서 열두 개를 목표로 하십시오.
+
+| 축 | 예 |
+|---|---|
+| 제품 계열 | `redrob`, `careerchat`, `secondoffice` |
+| 컴포넌트 | `desktop-app`, `browser-extension`, `cli`, `microservices` |
+| 도메인 | `graphics-editor`, `sql-client`, `identity-verification`, `evaluation` |
+| 주 언어와 런타임 | `rust`, `typescript`, `python`, `tauri`, `nextjs`, `electron` |
+| 특징 | `local-first`, `self-hosted`, `open-weights`, `i18n`, `korean` |
+
+토픽은 소문자와 하이픈입니다. GitHub가 강제하므로 형태는 선택 사항이 아닙니다. 이름을 그대로 반복하는
+토픽(`redrob-query` 에 `redrob-query`)은 넣지 말고, 충실해 보이려고 개수를 채우지 마십시오. 토픽은
+클릭되기 위해 존재합니다.
+
+**포크는 상류를 토픽으로 밝힙니다.** `opencode-fork`, `openwork`, `openpencil`, `freecad`,
+`chromium`. 포크를 믿을지 판단하는 사람은 코드를 한 줄 읽기 전에 무엇을 포크했는지 알고 싶어 하고,
+가장 먼저 보는 곳이 여기입니다.
+
+**배포된 URL이 있으면 homepage를 설정하십시오.** 설명 옆에 렌더링되어 README를 한 번 거치는 수고를
+없앱니다.
+
+### 현재 상태
+
+격차는 작지 않고, 한쪽으로 쏠려 있습니다.
+
+| 조직 | 저장소 | 규칙 미달 |
+|---|---|---|
+| `redrob-labs` | 17 | 0 |
+| `mckinley-and-rice` | 241 | 237 |
+
+`redrob-labs` 가 완비된 것은 공개이고 누군가 알아채기 때문입니다. 이 조직은 대부분 비공개라 아무도
+알아채지 않았습니다. 79%가 설명이 아예 없고 87%가 토픽이 없습니다.
+
+### 검사
+
+GitHub에는 두 필드를 요구하는 설정이 없으므로, 이 규칙에는 자체 검사가 필요합니다.
+
+```bash
+./scripts/audit-metadata.sh mckinley-and-rice        # 보고
+./scripts/audit-metadata.sh redrob-labs --fail       # 하나라도 빠지면 비정상 종료
+```
+
+규칙이 다루는 그 두 필드를 읽고, 아카이브된 저장소는 건너뛰고, `--fail` 이 있을 때만 실패합니다.
+그래서 백로그가 남아 있는 동안에는 보고만 하고, 백로그가 해소되면 게이트로 쓸 수 있습니다. 검사가
+강제하는 임계값은 설명 20자 이상, 토픽 3개 이상입니다.
+
+저장소 하나를 고치는 것은 명령 한 줄입니다.
+
+```bash
+gh repo edit <owner>/<name> \
+  --description "One sentence saying what it is and who it is for." \
+  --homepage "https://example.com" \
+  --add-topic typescript --add-topic desktop-app --add-topic korean
+```
+
 ## 개명은 비싸고, 일부는 되돌릴 수 없습니다
 
 GitHub는 옛 이름을 새 이름으로 리다이렉트하지만, 그 리다이렉트는 너무 늦게 알기 쉬운 방식으로

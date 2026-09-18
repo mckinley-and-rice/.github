@@ -16,8 +16,9 @@ English: [README.md](./README.md)
 | [SUPPORT.md](./SUPPORT.md) | 질문을 보내는 곳. |
 | [AGENTS.md](./AGENTS.md) | 우리 저장소에서 작업하는 AI 에이전트가 지켜야 할 것. |
 | [docs/GITFLOW.ko.md](./docs/GITFLOW.ko.md) | 브랜치, 머지, 릴리스, 핫픽스, 그리고 CI가 실제로 강제하는 것. |
-| [docs/REPO-NAMING.ko.md](./docs/REPO-NAMING.ko.md) | 저장소 이름 규칙과, 나중에 개명하는 비용이 왜 큰지. |
+| [docs/REPO-NAMING.ko.md](./docs/REPO-NAMING.ko.md) | 저장소 이름 규칙, 반드시 갖춰야 하는 설명과 토픽, 그리고 나중에 개명하는 비용이 왜 큰지. |
 | [docs/DESIGN.ko.md](./docs/DESIGN.ko.md) | 토큰, 타이포, 모션, 그리고 제품 화면이 따르는 규칙. |
+| [scripts/audit-metadata.sh](./scripts/audit-metadata.sh) | 설명이나 토픽이 없는 저장소를 보고합니다. 게이트로 쓰려면 `--fail`. |
 
 ## GitHub가 자동으로 물려주는 것과 물려주지 않는 것
 
