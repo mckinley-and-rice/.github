@@ -49,6 +49,14 @@ the gate instead of acquiring it after the first badly named branch.
 this organization only. A repository in a different organization needs that organization's
 own `.github` repository, even when the same people own both.
 
+**The Korean code of conduct lives in `docs/`, not next to the English one.** GitHub picks
+one file per health-file slot, and with both `CODE_OF_CONDUCT.md` and
+`CODE_OF_CONDUCT.ko.md` at the root it picked the Korean one for all 242 repositories.
+`docs/` is scanned at lower precedence than the root, so the English file wins the slot and
+the Korean file is still one click away. Do not move it back. Every other Korean document
+keeps its `.ko.md` name beside its English pair, because no other document is claimed by a
+GitHub slot.
+
 ## Changing a standard
 
 Open a pull request. These documents are read as rules, so a change to one is a change to
