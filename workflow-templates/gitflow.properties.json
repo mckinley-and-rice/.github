@@ -1,0 +1,6 @@
+{
+  "name": "Gitflow (branch name and back-merge)",
+  "description": "Fails a pull request whose head branch is not <type>/<slug>, and fails while main holds commits develop does not. Edit ALLOWED_TYPES to this repository's type list.",
+  "iconName": "octicon git-branch",
+  "categories": ["Continuous integration"]
+}

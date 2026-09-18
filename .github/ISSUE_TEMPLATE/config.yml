@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/mckinley-and-rice/.github/blob/main/SECURITY.md
+    about: Report privately by email. Never in a public issue.
+  - name: Code of conduct concern
+    url: https://github.com/mckinley-and-rice/.github/blob/main/CODE_OF_CONDUCT.md
+    about: Handled confidentially at conduct@redrob.ai.
+  - name: Engineering standards
+    url: https://github.com/mckinley-and-rice/.github
+    about: Branching, naming, design and agent rules for every repository here.
