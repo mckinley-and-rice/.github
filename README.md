@@ -16,8 +16,9 @@ our interfaces look like.
 | [SUPPORT.md](./SUPPORT.md) | Where a question goes. |
 | [AGENTS.md](./AGENTS.md) | What an AI agent working in one of our repositories must do. |
 | [docs/GITFLOW.md](./docs/GITFLOW.md) | Branches, merges, releases, hotfixes, and what CI enforces. |
-| [docs/REPO-NAMING.md](./docs/REPO-NAMING.md) | What a repository may be called, and why renaming later is expensive. |
+| [docs/REPO-NAMING.md](./docs/REPO-NAMING.md) | What a repository may be called, the description and topics it must carry, and why renaming later is expensive. |
 | [docs/DESIGN.md](./docs/DESIGN.md) | Tokens, type, motion, and the rules a product interface follows. |
+| [scripts/audit-metadata.sh](./scripts/audit-metadata.sh) | Reports repositories missing a description or topics. `--fail` to gate on it. |
 
 ## What GitHub inherits from this repository, and what it does not
 
