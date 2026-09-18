@@ -59,9 +59,48 @@ GitHub slot.
 
 ## Changing a standard
 
-Open a pull request. These documents are read as rules, so a change to one is a change to
-how every repository is expected to work, and that is worth a review rather than a push.
+This repository follows the standard it publishes, so a change lands through a pull request
+into `develop`.
 
-When a rule and a repository disagree, one of the two is wrong. Say which in the pull
-request. A rule nothing enforces is a preference, so prefer a rule with a check next to it,
-and when you cannot check it, say plainly in the document that it is unchecked.
+| | |
+|---|---|
+| `develop` | Default. Every change lands here first. |
+| `main` | The published state. What the issue templates and the organization profile link to. |
+| Branch names | `<type>/<slug>`, types `feat fix chore docs test refactor perf`. |
+| Required check | `branch name follows the convention` |
+
+Both branches are protected: pull requests only, no force pushes, no deletions.
+
+`main` moves by a promotion pull request from `develop`, merged as a **merge commit**, and
+that promotion is followed by a back-merge pull request from `main` into `develop`. Two pull
+requests per promotion is the real cost of the model, and this repository pays it rather than
+exempting itself from a rule it asks 242 other repositories to follow.
+
+The back-merge is not optional bookkeeping. The `gitflow` workflow fails on every push to
+`main` while `main` holds commits `develop` does not, and a merge-commit promotion always
+leaves exactly that until the back-merge lands.
+
+The one part of the model this repository does not use is `release/*` and version tags. There
+is no artifact to build, so there is nothing to tag, and `sync` does not apply either because
+there is no upstream. Its `ALLOWED_TYPES` is shorter than the full set in
+[docs/GITFLOW.md](./docs/GITFLOW.md) for that reason, and says so in a comment.
+
+These documents are read as rules, so a change to one is a change to how every repository is
+expected to work. When a rule and a repository disagree, one of the two is wrong. Say which
+in the pull request. A rule nothing enforces is a preference, so prefer a rule with a check
+next to it, and when you cannot check it, say plainly in the document that it is unchecked.
+
+## Our other organization
+
+[github.com/redrob-labs](https://github.com/redrob-labs) is ours too. It holds the open
+source products and research: Redrob Code, Cowork, Office, Design, Canvas, Query, Recall,
+Eval, Studio, Verify and Image.
+
+The split is by audience, not by ownership. This organization is client and platform work and
+is mostly private; `redrob-labs` is what we publish for people outside the company to use.
+
+**These defaults do not reach it.** GitHub health-file inheritance stops at the organization
+boundary, so `redrob-labs` needs its own `.github` repository, and it does not have one yet.
+Its repositories each carry their own `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` and
+`SECURITY.md` today. The standards in `docs/` apply to both organizations as written; only the
+automatic inheritance is limited to this one.

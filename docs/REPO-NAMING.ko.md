@@ -28,6 +28,17 @@ seers-api
 `<qualifier>` 는 한 제품에 같은 컴포넌트가 둘 이상일 때 좁혀 줍니다.
 `careerchat-recruiters-web` 과 `careerchat-jobs-web` 처럼.
 
+## 형제 조직
+
+[github.com/redrob-labs](https://github.com/redrob-labs) 도 우리 것이고, 그곳 저장소는 의도적으로
+다르게 생겼습니다. `redrob-code`, `redrob-cowork`, `redrob-office`. 거기서는 제품 계열이 Redrob
+자체이고 저장소 하나가 제품 하나이므로, 형태는 컴포넌트 토큰이 없는 `redrob-<product>` 입니다.
+그 제품들이 웹 계층과 API 계층으로 나뉘지 않고 하나의 애플리케이션으로 출하되기 때문입니다.
+
+두 형태는 같은 규칙입니다. `<product>-<component>` 이고, 산출물이 하나인 제품에는 이름 붙일
+컴포넌트가 없는 것입니다. 대칭으로 보이게 하려고 `-app` 이나 `-desktop` 을 붙이지 말고, 그곳에서
+`redrob-` 접두어를 떼지도 마십시오. 그 조직에서 그것은 회사 접두어가 아니라 제품 계열입니다.
+
 ## 규칙
 
 **컴포넌트를 뒤에 둡니다.** `api-careerchat-jobs` 가 아니라 `careerchat-jobs-api` 입니다. 그러면

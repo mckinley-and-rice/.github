@@ -10,6 +10,7 @@ Where a question goes depends on what kind of question it is.
 | A security vulnerability | [SECURITY.md](./SECURITY.md). Never a public issue. |
 | A conduct concern | `conduct@redrob.ai`. See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md). |
 | A question about these standards | An issue or pull request on this repository. |
+| Anything about an open source Redrob product | That repository in [redrob-labs](https://github.com/redrob-labs), our other organization. |
 
 A useful bug report names the platform, the version, and what you saw on screen. A screenshot
 of the actual window beats a description of it.

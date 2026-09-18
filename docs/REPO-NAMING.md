@@ -28,6 +28,19 @@ The product is what tells two repositories apart.
 `<qualifier>` narrows a component when a product has more than one of them:
 `careerchat-recruiters-web` and `careerchat-jobs-web`.
 
+## The sibling organization
+
+[github.com/redrob-labs](https://github.com/redrob-labs) is ours too, and its repositories
+look different on purpose: `redrob-code`, `redrob-cowork`, `redrob-office`. There the product
+family is Redrob itself and each repository is one product, so the shape is
+`redrob-<product>` with no component token, because each of those products ships as one
+application rather than as a web tier and an API tier.
+
+Both shapes are the same rule: `<product>-<component>` where a single-artifact product has no
+component to name. Do not add a `-app` or `-desktop` suffix to make it look symmetrical, and
+do not drop the `redrob-` prefix there: in that organization it is the product family, not a
+company prefix.
+
 ## Rules
 
 **Put the component last.** `careerchat-jobs-api`, not `api-careerchat-jobs`. Alphabetical
