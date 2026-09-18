@@ -80,6 +80,79 @@ before they push.
 called `beaver` that ships strings saying "Redrob Data" makes every search fail in one
 direction or the other. Rename it before publishing, not after.
 
+## Description and topics
+
+A name alone does not find a repository in a list of 241. The description and the topics are
+what make one findable, and both are required.
+
+**Every repository has a description.** One sentence, present tense, saying what the thing is
+and who it is for. Start with the product name so the sentence still makes sense when GitHub
+shows it without the repository name next to it.
+
+```
+Redrob Query is a JVM-free, AI-native desktop database client for PostgreSQL, MySQL, SQLite, and MongoDB.
+```
+
+Keep it under about 120 characters. GitHub accepts far more, but a long description is
+truncated in the org listing and in search results, which is exactly where it was supposed to
+help. Never use the repository name as its own description, and never leave a placeholder: an
+empty description and `TODO` cost the same and one of them looks deliberate.
+
+**Every repository has at least three topics.** Aim for four to twelve, drawn from these axes:
+
+| Axis | Examples |
+|---|---|
+| Product family | `redrob`, `careerchat`, `secondoffice` |
+| Component | `desktop-app`, `browser-extension`, `cli`, `microservices` |
+| Domain | `graphics-editor`, `sql-client`, `identity-verification`, `evaluation` |
+| Primary language and runtime | `rust`, `typescript`, `python`, `tauri`, `nextjs`, `electron` |
+| Notable property | `local-first`, `self-hosted`, `open-weights`, `i18n`, `korean` |
+
+Topics are lower case with hyphens; GitHub enforces that, so the shape is not up to you. Do
+not add a topic that duplicates the name (`redrob-query` on `redrob-query`), and do not pad
+to look thorough: a topic exists to be clicked.
+
+**A fork names its upstream in a topic.** `opencode-fork`, `openwork`, `openpencil`,
+`freecad`, `chromium`. Someone deciding whether to trust a fork wants to know what it forked
+before they read a line of it, and this is where they look first.
+
+**Set the homepage** for anything with a deployed URL. It renders next to the description and
+saves a round trip through the README.
+
+### The state of this today
+
+The gap is not small, and it is one-sided:
+
+| Organization | Repositories | Failing the rule |
+|---|---|---|
+| `redrob-labs` | 17 | 0 |
+| `mckinley-and-rice` | 241 | 237 |
+
+`redrob-labs` is complete because it is public and someone would notice. This organization is
+mostly private, so nobody noticed: 79% have no description at all and 87% have no topics.
+
+### Checking it
+
+GitHub has no setting that requires either field, so this rule needs a check of its own:
+
+```bash
+./scripts/audit-metadata.sh mckinley-and-rice        # report
+./scripts/audit-metadata.sh redrob-labs --fail       # non-zero exit when anything is missing
+```
+
+It reads the same two fields the rule is about, skips archived repositories, and fails only
+with `--fail`, so it can report while a backlog exists and gate once the backlog is cleared.
+The thresholds it enforces are a description of at least 20 characters and at least 3 topics.
+
+Fixing one repository is one command:
+
+```bash
+gh repo edit <owner>/<name> \
+  --description "One sentence saying what it is and who it is for." \
+  --homepage "https://example.com" \
+  --add-topic typescript --add-topic desktop-app --add-topic korean
+```
+
 ## Renaming is expensive, and partly irreversible
 
 GitHub redirects the old name to the new one, and that redirect is fragile in ways that are
