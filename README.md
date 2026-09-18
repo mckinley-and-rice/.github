@@ -60,26 +60,50 @@ GitHub slot.
 
 ## Changing a standard
 
-This repository follows the standard it publishes, so a change lands through a pull request
-into `develop`.
+This repository follows the standard it publishes, with one deliberate deviation, so a change
+lands through a pull request into `develop`.
 
 | | |
 |---|---|
-| `develop` | Default. Every change lands here first. |
-| `main` | The published state. What the issue templates and the organization profile link to. |
+| `main` | **Default.** The published state. GitHub serves the inherited health files from here. |
+| `develop` | Integration. Every change lands here first, then is promoted. |
 | Branch names | `<type>/<slug>`, types `feat fix chore docs test refactor perf`. |
 | Required check | `branch name follows the convention` |
 
-Both branches are protected: pull requests only, no force pushes, no deletions.
+Both branches are protected: pull requests only, no force pushes, no deletions, and admin
+enforcement is on, so the protection binds the maintainers too rather than being advisory for
+the only people who work here.
 
-`main` moves by a promotion pull request from `develop`, merged as a **merge commit**, and
-that promotion is followed by a back-merge pull request from `main` into `develop`. Two pull
-requests per promotion is the real cost of the model, and this repository pays it rather than
-exempting itself from a rule it asks 242 other repositories to follow.
+### Why `main` is the default here, when the standard says `develop`
+
+[docs/GITFLOW.md](./docs/GITFLOW.md) makes `develop` the default branch, and its reason is that
+the people reading a repository's default branch are contributors, while end users install a
+release artifact instead of cloning.
+
+That reason inverts in a `.github` repository. **GitHub reads community health files from the
+default branch**, measured rather than assumed: with `develop` as the default, every repository
+in this organization resolved its inherited code of conduct to
+`/blob/develop/CODE_OF_CONDUCT.md`. So the default branch here is not the contributors' view,
+it is the surface served to 241 repositories, and pointing that at an integration branch
+publishes whatever was merged an hour ago.
+
+`main` is therefore the default, and `develop` still integrates. The standard's rationale is
+what produces this answer, so the deviation follows the standard rather than breaking it. It is
+recorded here because an undocumented deviation reads as an oversight, and the next person
+would "fix" it back.
+
+### The cost of the model
+
+`main` moves by a promotion pull request from `develop`, merged as a **merge commit**, and that
+promotion is followed by a back-merge pull request from `main` into `develop`. Two pull requests
+per promotion is the real cost, and this repository pays it rather than exempting itself from a
+rule it asks 241 others to follow.
 
 The back-merge is not optional bookkeeping. The `gitflow` workflow fails on every push to
-`main` while `main` holds commits `develop` does not, and a merge-commit promotion always
-leaves exactly that until the back-merge lands.
+`main` while `main` holds commits `develop` does not, and a merge-commit promotion always leaves
+exactly that until the back-merge lands. Measured on the first promotion here:
+`git rev-list --count origin/develop..origin/main` read 1 and the run on `main` failed, then
+read 0 and passed once the back-merge landed.
 
 The one part of the model this repository does not use is `release/*` and version tags. There
 is no artifact to build, so there is nothing to tag, and `sync` does not apply either because
@@ -101,7 +125,9 @@ The split is by audience, not by ownership. This organization is client and plat
 is mostly private; `redrob-labs` is what we publish for people outside the company to use.
 
 **These defaults do not reach it.** GitHub health-file inheritance stops at the organization
-boundary, so `redrob-labs` needs its own `.github` repository, and it does not have one yet.
-Its repositories each carry their own `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` and
-`SECURITY.md` today. The standards in `docs/` apply to both organizations as written; only the
-automatic inheritance is limited to this one.
+boundary, so `redrob-labs` has its own
+[`.github`](https://github.com/redrob-labs/.github) repository supplying its health files. It
+does not duplicate the four documents in `docs/`; it links to them, because both organizations
+follow the same standards and a copy drifts. What it adds is what only applies there:
+[FORKS.md](https://github.com/redrob-labs/.github/blob/main/FORKS.md), the rules for the eight
+repositories in that organization that are forks.

@@ -23,6 +23,12 @@ End users install a release artifact; they do not clone.
 
 We do not use `master`.
 
+**One kind of repository inverts this.** In an organization's `.github` repository, GitHub
+serves the community health files from the default branch, so the default branch is the
+surface published to every repository in the organization rather than the contributors' view.
+There, `main` is the default and `develop` still integrates. The reason above is what produces
+that answer, so it is not an exception to the rule but an application of it.
+
 **Changing the default branch is a breaking change to CI.** A workflow filtered on
 `branches: [main]` stops running silently when the default moves to `develop`, and silence
 is not a failure, so nothing reports it. In one repository `typecheck` ran zero times on
