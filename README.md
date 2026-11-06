@@ -118,8 +118,8 @@ next to it, and when you cannot check it, say plainly in the document that it is
 ## Our other organization
 
 [github.com/redrob-labs](https://github.com/redrob-labs) is ours too. It holds the open
-source products and research: Redrob Code, Cowork, Office, Design, Canvas, Query, Recall,
-Eval, Studio, Verify and Image.
+source products and research: Redrob OS, Code, Browser, Canvas, Film, Shape,
+CAD, Board, Grow, Eval, Image and UI.
 
 The split is by audience, not by ownership. This organization is client and platform work and
 is mostly private; `redrob-labs` is what we publish for people outside the company to use.

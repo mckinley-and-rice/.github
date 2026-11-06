@@ -31,7 +31,7 @@ seers-api
 ## 형제 조직
 
 [github.com/redrob-labs](https://github.com/redrob-labs) 도 우리 것이고, 그곳 저장소는 의도적으로
-다르게 생겼습니다. `redrob-code`, `redrob-cowork`, `redrob-office`. 거기서는 제품 계열이 Redrob
+다르게 생겼습니다. `redrob-code`, `redrob-browser`, `redrob-canvas`. 거기서는 제품 계열이 Redrob
 자체이고 저장소 하나가 제품 하나이므로, 형태는 컴포넌트 토큰이 없는 `redrob-<product>` 입니다.
 그 제품들이 웹 계층과 API 계층으로 나뉘지 않고 하나의 애플리케이션으로 출하되기 때문입니다.
 
@@ -86,7 +86,7 @@ seers-api
 제품 이름으로 시작하십시오. GitHub가 저장소 이름 없이 설명만 보여줄 때도 문장이 성립해야 합니다.
 
 ```
-Redrob Query is a JVM-free, AI-native desktop database client for PostgreSQL, MySQL, SQLite, and MongoDB.
+Redrob Canvas is a modern, cross-platform, agentic graphics editor built with Rust and Qt Quick.
 ```
 
 120자 아래로 유지하십시오. GitHub는 훨씬 더 긴 것도 받지만, 긴 설명은 조직 목록과 검색 결과에서
@@ -104,11 +104,11 @@ Redrob Query is a JVM-free, AI-native desktop database client for PostgreSQL, My
 | 특징 | `local-first`, `self-hosted`, `open-weights`, `i18n`, `korean` |
 
 토픽은 소문자와 하이픈입니다. GitHub가 강제하므로 형태는 선택 사항이 아닙니다. 이름을 그대로 반복하는
-토픽(`redrob-query` 에 `redrob-query`)은 넣지 말고, 충실해 보이려고 개수를 채우지 마십시오. 토픽은
+토픽(`redrob-canvas` 에 `redrob-canvas`)은 넣지 말고, 충실해 보이려고 개수를 채우지 마십시오. 토픽은
 클릭되기 위해 존재합니다.
 
-**포크는 상류를 토픽으로 밝힙니다.** `opencode-fork`, `openwork`, `openpencil`, `freecad`,
-`chromium`. 포크를 믿을지 판단하는 사람은 코드를 한 줄 읽기 전에 무엇을 포크했는지 알고 싶어 하고,
+**포크는 상류를 토픽으로 밝힙니다.** `opencode-fork`, `obscura`, `cadcraft`, `filmcraft`,
+`zeroclaw`. 포크를 믿을지 판단하는 사람은 코드를 한 줄 읽기 전에 무엇을 포크했는지 알고 싶어 하고,
 가장 먼저 보는 곳이 여기입니다.
 
 **배포된 URL이 있으면 homepage를 설정하십시오.** 설명 옆에 렌더링되어 README를 한 번 거치는 수고를

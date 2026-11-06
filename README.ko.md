@@ -116,8 +116,8 @@ English: [README.md](./README.md)
 ## 우리의 다른 조직
 
 [github.com/redrob-labs](https://github.com/redrob-labs) 도 우리 것입니다. 오픈소스 제품과 연구가
-거기에 있습니다. Redrob Code, Cowork, Office, Design, Canvas, Query, Recall, Eval, Studio,
-Verify, Image.
+거기에 있습니다. Redrob OS, Code, Browser, Canvas, Film, Shape, CAD, Board, Grow, Eval,
+Image, UI.
 
 나뉜 기준은 소유가 아니라 대상입니다. 이 조직은 고객 작업과 플랫폼 작업이고 대부분 비공개입니다.
 `redrob-labs` 는 회사 밖 사람들이 쓰도록 우리가 발행하는 것입니다.
