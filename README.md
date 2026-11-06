@@ -60,60 +60,23 @@ GitHub slot.
 
 ## Changing a standard
 
-This repository follows the standard it publishes, with one deliberate deviation, so a change
-lands through a pull request into `develop`.
+This repository has one branch, `main`. A change lands through a pull request straight into
+`main`. There is no `develop`, no promotion and no back-merge.
 
 | | |
 |---|---|
-| `main` | **Default.** The published state. GitHub serves the inherited health files from here. |
-| `develop` | Integration. Every change lands here first, then is promoted. |
+| `main` | **Default and only branch.** GitHub serves the inherited health files from here. |
 | Branch names | `<type>/<slug>`, types `feat fix chore docs test refactor perf`. |
 | Required check | `branch name follows the convention` |
 
-Both branches are protected: pull requests only, no force pushes, no deletions, and admin
-enforcement is on, so the protection binds the maintainers too rather than being advisory for
-the only people who work here.
+`main` is protected: pull requests only, no force pushes, no deletions, and admin enforcement
+is on.
 
-### Why `main` is the default here, when the standard says `develop`
-
-[docs/GITFLOW.md](./docs/GITFLOW.md) makes `develop` the default branch, and its reason is that
-the people reading a repository's default branch are contributors, while end users install a
-release artifact instead of cloning.
-
-That reason inverts in a `.github` repository. **GitHub reads community health files from the
-default branch**, measured rather than assumed: with `develop` as the default, every repository
-in this organization resolved its inherited code of conduct to
-`/blob/develop/CODE_OF_CONDUCT.md`. So the default branch here is not the contributors' view,
-it is the surface served to 241 repositories, and pointing that at an integration branch
-publishes whatever was merged an hour ago.
-
-`main` is therefore the default, and `develop` still integrates. The standard's rationale is
-what produces this answer, so the deviation follows the standard rather than breaking it. It is
-recorded here because an undocumented deviation reads as an oversight, and the next person
-would "fix" it back.
-
-### The cost of the model
-
-`main` moves by a promotion pull request from `develop`, merged as a **merge commit**, and that
-promotion is followed by a back-merge pull request from `main` into `develop`. Two pull requests
-per promotion is the real cost, and this repository pays it rather than exempting itself from a
-rule it asks 241 others to follow.
-
-The back-merge is not optional bookkeeping. The `gitflow` workflow fails on every push to
-`main` while `main` holds commits `develop` does not, and a merge-commit promotion always leaves
-exactly that until the back-merge lands. Measured on the first promotion here:
-`git rev-list --count origin/develop..origin/main` read 1 and the run on `main` failed, then
-read 0 and passed once the back-merge landed.
-
-The one part of the model this repository does not use is `release/*` and version tags. There
-is no artifact to build, so there is nothing to tag, and `sync` does not apply either because
-there is no upstream. Its `ALLOWED_TYPES` is shorter than the full set in
-[docs/GITFLOW.md](./docs/GITFLOW.md) for that reason, and says so in a comment.
-
-These documents are read as rules, so a change to one is a change to how every repository is
-expected to work. When a rule and a repository disagree, one of the two is wrong. Say which
-in the pull request. A rule nothing enforces is a preference, so prefer a rule with a check
-next to it, and when you cannot check it, say plainly in the document that it is unchecked.
+This is a deliberate deviation from [docs/GITFLOW.md](./docs/GITFLOW.md). GitHub reads
+community health files from the default branch, so here the default branch is the surface
+served to every repository in the organization, not the contributors' view. The repository
+holds documents only: nothing is built, tagged or synced from upstream, so an integration
+branch would only add a second pull request per change.
 
 ## Our other organization
 
