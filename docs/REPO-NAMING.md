@@ -31,7 +31,7 @@ The product is what tells two repositories apart.
 ## The sibling organization
 
 [github.com/redrob-labs](https://github.com/redrob-labs) is ours too, and its repositories
-look different on purpose: `redrob-code`, `redrob-cowork`, `redrob-office`. There the product
+look different on purpose: `redrob-code`, `redrob-browser`, `redrob-canvas`. There the product
 family is Redrob itself and each repository is one product, so the shape is
 `redrob-<product>` with no component token, because each of those products ships as one
 application rather than as a web tier and an API tier.
@@ -90,7 +90,7 @@ and who it is for. Start with the product name so the sentence still makes sense
 shows it without the repository name next to it.
 
 ```
-Redrob Query is a JVM-free, AI-native desktop database client for PostgreSQL, MySQL, SQLite, and MongoDB.
+Redrob Canvas is a modern, cross-platform, agentic graphics editor built with Rust and Qt Quick.
 ```
 
 Keep it under about 120 characters. GitHub accepts far more, but a long description is
@@ -109,11 +109,11 @@ empty description and `TODO` cost the same and one of them looks deliberate.
 | Notable property | `local-first`, `self-hosted`, `open-weights`, `i18n`, `korean` |
 
 Topics are lower case with hyphens; GitHub enforces that, so the shape is not up to you. Do
-not add a topic that duplicates the name (`redrob-query` on `redrob-query`), and do not pad
+not add a topic that duplicates the name (`redrob-canvas` on `redrob-canvas`), and do not pad
 to look thorough: a topic exists to be clicked.
 
-**A fork names its upstream in a topic.** `opencode-fork`, `openwork`, `openpencil`,
-`freecad`, `chromium`. Someone deciding whether to trust a fork wants to know what it forked
+**A fork names its upstream in a topic.** `opencode-fork`, `obscura`, `cadcraft`,
+`filmcraft`, `zeroclaw`. Someone deciding whether to trust a fork wants to know what it forked
 before they read a line of it, and this is where they look first.
 
 **Set the homepage** for anything with a deployed URL. It renders next to the description and

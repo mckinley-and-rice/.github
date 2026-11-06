@@ -14,17 +14,18 @@ where our open source products and research live:
 
 | | |
 |---|---|
+| [redrob-os](https://github.com/redrob-labs/redrob-os) | Agentic operating system for Raspberry Pi 5 with a resident agent in a sandbox |
 | [redrob-code](https://github.com/redrob-labs/redrob-code) | AI coding agent for the terminal, with Korean as a first-class locale |
-| [redrob-cowork](https://github.com/redrob-labs/redrob-cowork) | Desktop and MCP app for working with AI agents on your own files |
-| [redrob-office](https://github.com/redrob-labs/redrob-office) | Docs, Sheets, Slides, PDF, Markdown and Hangul editors in one window |
-| [redrob-design](https://github.com/redrob-labs/redrob-design) | Prompt-driven design editor for `.fig` and `.pen` files |
+| [redrob-browser](https://github.com/redrob-labs/redrob-browser) | Web browser with the agent built in |
 | [redrob-canvas](https://github.com/redrob-labs/redrob-canvas) | Agentic graphics editor in Rust and Qt Quick |
-| [redrob-query](https://github.com/redrob-labs/redrob-query) | JVM-free database client for PostgreSQL, MySQL, SQLite and MongoDB |
-| [redrob-recall](https://github.com/redrob-labs/redrob-recall) | Local-first file search with grounded answers |
-| [redrob-eval](https://github.com/redrob-labs/redrob-eval) | LLM eval workbench: verifiable prompts, blind preference, GEPA, self-hosted vLLM |
-| [redrob-studio](https://github.com/redrob-labs/redrob-studio) | Image and audio tools backed by ComfyUI on your own GPU |
-| [redrob-verify](https://github.com/redrob-labs/redrob-verify) | Open harness for OCR, forgery detection and face matching |
+| [redrob-film](https://github.com/redrob-labs/redrob-film) | Agentic video editor: describe the cut and let the agent make it |
+| [redrob-shape](https://github.com/redrob-labs/redrob-shape) | Agentic 3D suite that opens existing `.blend` files |
+| [redrob-cad](https://github.com/redrob-labs/redrob-cad) | Parametric 3D modeller with an agent that helps design parts |
+| [redrob-board](https://github.com/redrob-labs/redrob-board) | PCB design studio from a spoken spec to a factory-ready board |
+| [redrob-grow](https://github.com/redrob-labs/redrob-grow) | Agentic grower that keeps crops alive in rooms built for people |
+| [redrob-eval](https://github.com/redrob-labs/redrob-eval) | LLM eval workbench: verifiable prompts, blind preference, self-hosted on your GPU |
 | [redrob-image](https://github.com/redrob-labs/redrob-image) | Open-weight text-to-image model, free for commercial use |
+| [redrob-ui](https://github.com/redrob-labs/redrob-ui) | Redrob Group Design System 2026 as typed React components and tokens |
 
 The split is by audience rather than ownership: this organization is client and platform work,
 `redrob-labs` is what we publish for people outside the company to use.
